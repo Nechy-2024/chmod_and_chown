@@ -1,0 +1,77 @@
+**Change Mode (Chmod) command in Linux**
+
+The chmod, or change mode, command allows an administrator to set or modify a file's permissions. Every UNIX/Linux file has an owner user and an owner group attached to it, and every file has permissions associated with it.
+
+The permissions are as follows: Read, write or execute.
+
+- \--- means no permissions have been granted
+- Rwx means full permission has been granted (The read, write, and execute indicators are all present)
+
+**Understanding The Permission Syntax**
+
+To use chmod to set permissions, we need to tell it:
+
+- Who: Who we are setting permissions for.
+- What: What change are we making? Are we adding or removing the permission?
+- Which: Which of the permissions are we setting?We use indicators to represent these values, and form short "permissions statements" such as u+x, where "u" means " user" (who), "+" means add (what), and "x" means the execute permission (which).
+
+The "who" values we can use are:
+
+- u: User, meaning the owner of the file.
+- g: Group, meaning members of the group the file belongs to.
+- o: Others, meaning people not governed by the u and g permissions.
+- a: All, meaning all of the above.
+
+If none of these are used, chmod behaves as if "a" had been used.
+
+The "what" values we can use are:
+
+- \-: Minus sign. Removes the permission.
+- +: Plus sign. Grants the permission. The permission is added to the existing permissions. If you want to have this permission and only this permission set, use the = option, described below.
+- \=: Equals sign. Set a permission and remove others.
+
+The "which " values we can use are:
+
+- r: The read permission.
+- w: The write permission.
+- x: The execute permission.
+
+**Change Owner (Chown) command in Linux**
+
+Linux chown command is used to change a file's ownership, directory, or symbolic link for a [user](https://www.javatpoint.com/linux-users) or [group](https://www.javatpoint.com/linux-groups). The chown stands for change owner. In [Linux](https://www.javatpoint.com/linux-tutorial), each file is associated with a corresponding owner or group.
+
+The Linux system may have multiple users. Every user has a unique name and user ID. If only a user is available in the system, the user will be the owner of each file.
+
+The Linux system may have multiple users. Every user has a unique name and user [ID](https://www.javatpoint.com/id). If only a user is available in the system, the user will be the owner of each file.
+
+Users can be listed in different groups. The group allows us to set permission on the group level instead of setting permission on an individual level.
+
+**Permissions and Ownership:** To secure and protect directories and files in Linux, we can use permissions for controlling what a user can implement with a directory or file. Linux utilizes three different types of permissions, which are mentioned below:
+
+- **Read:** It permits the user for reading files and enables the user for reading directories or subdirectories saved inside it.
+- **Write:** It permits the user to delete and modify a file. It also permits a user to change its contents (delete, create, and rename files inside it) for directories. Changes make an impact on them until the execute permission isn't provided to the directory.
+- **Execute:** It permits it to get run on a file. For instance, if we have any file called exe.sh until we don't provide with it the execute permission, it will not run.
+
+### **File Permission Types**
+
+- **User:** These file permissions impact the file's owner.
+- **Group:** These file permissions impact the group, which is the owner of the file. The user permission will be used if the user owner is inside this group rather than the group permissions.
+- **Other:** These file permissions impact every other user in the system.
+
+**Syntax:**
+
+Below is the general syntax of the chown command:
+
+1. chown \[**OPTION**\]... \[OWNER\]\[:\[**GROUP**\]\] FILE...
+
+**Options:**
+
+Following are the command-line options of the chown command:
+
+**\-c, --changes:** It is used to display the detailed output like verbose, but it is reported when only a change is made.
+
+**\-f, --silent, --quiet:** It is used to suppress the error messages.
+
+**\-v, --verbose:** It is used to display a diagnostic for every processed file.
+
+**\--dereference:** It is used to affect the referent of each symbolic link.
